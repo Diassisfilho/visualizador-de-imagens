@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+	
+	<title>Visualizador de IMGs do de Assis</title>
+	<link href="./src/main.css" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.9.0/viewer.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Bem vindo ao visualizador de imagens do de Assis</h1>
+	</header>
+	<main>
+		<p class="texto-normal">Exemplo: Se quiser ver a imagens example.com/1.jpg, example.com/2.jpg, example.com/3.jpg<br>É so colocar a url assim: https://example.com/[1-3].jpg</p>
+		
+		<input type="text" id="add-url" placeholder="Adicione aqui a url com range de regex para abrir as imagens"/>
+		
+		<div class="botao" id="mostra-imgs">
+			<p>Mostrar imagens<p>
+		</div>
+		<div class="botao" id="apr-imgs">
+			<p>Apresentar images na ordem certa<p>
+		</div>
+
+		<div id="images">
+			<div id="row">
+				<div class="column">
+					<!-- Imagens adicionadas via javascript-->
+				</div>
+				<div class="column">
+					<!-- Imagens adicionadas via javascript-->
+				</div>
+				<div class="column">
+					<!-- Imagens adicionadas via javascript-->
+				</div>
+				<div class="column">
+					<!-- Imagens adicionadas via javascript-->
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer>
+		<p class="texto-normal">
+			Se quiser usar denovo é so recarregar a pagina
+		</p>
+	</footer>
+	
+	<script src="./src/index.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.9.0/viewer.js"></script>
+</body>
+</html>
