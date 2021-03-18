@@ -1,24 +1,20 @@
 console.log("Yo!")
-// variaveis globais
 var urls;
 var ordem_imgs = document.createElement("div");
 
-// elementos do doom
 var btn_mostra_imgs = document.getElementById("mostra-imgs");
 var btn_apr_em_ordem = document.getElementById("apr-imgs");
 var input = document.querySelector("input");
 
-// eventos de click dos botoes
 btn_mostra_imgs.addEventListener("click",
-	() => urls = mostra_grid_imagens(input.value)
+	() => urls = main(input.value)
 );
 
 btn_apr_em_ordem.addEventListener("click",
 	() => new Viewer(ordem_imgs).show()
 );
 
-// adiciona nas divs as imagens em formato de grid responsivo
-function mostra_grid_imagens(link)
+function main(link)
 {
 	let urls = return_url_range(link);
 
@@ -32,13 +28,13 @@ function mostra_grid_imagens(link)
 			if ( x == "apresentar" ) ordem_imgs.appendChild(img);		
 			if ( x == "mostrar" )	 columns[num_column].appendChild(img);	
 		}
-		// core do grid responsivo
+		
 		num_column+=1;
 		if (num_column == 4) num_column = 0;
 	}
 	
 	console.log(urls)
-	const galeria = new Viewer(document.getElementById("row"));
+	const gallery = new Viewer(document.getElementById("row"));
 }
 
 function return_url_range(link) {
@@ -53,7 +49,7 @@ function return_url_range(link) {
 	var end = parseInt(str_range.split("-")[1]);
 
 	var urls = [];
-	if (str_start[0] != 0) // loop sem zero a esquerda
+	if (str_start[0] != 0) // sem zero a esquerda
 	{
 		for (var x of Array.from({ length: end }, (x, i) => i + start)) {
 		    let imageUrl = link.slice(0, index_opcol) + x + link.slice(index_endcol + 1);
@@ -62,7 +58,7 @@ function return_url_range(link) {
 		  	if (x == end) break;
 		}	
 		
-	} else { // loop com zeros a esquerda
+	} else {
 		var str_x = str_start;
 		incrementLeadingZeroNumber(str_x, -1);
 		for (let x of Array.from({ length: end }, (x, i) => i + start)) {
@@ -76,7 +72,7 @@ function return_url_range(link) {
 	
 	return urls;
 }
-// incrementa e decrementa strings com 0 a esquerda
+
 function incrementLeadingZeroNumber(leadingZeroString, amountToIncrement){
   var amountOfZerosToAdd = leadingZeroString.length;
   var stringToNumber = (+leadingZeroString);
