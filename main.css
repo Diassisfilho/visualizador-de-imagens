@@ -19,6 +19,7 @@ body {
 }
 
 header {
+	margin-top: 2rem;
 	width: 100%;
 	height: 20vh;
 
@@ -36,25 +37,26 @@ main {
 	align-items: center;
 }
 
-main p {
+p {
 	text-align: center;
 }
 
 #add-url {
-	width: 60vw;
-	height: 4vh;
+	margin-top: 2rem;
+    width: 80vw;
+    height: 2.5rem;
 }
 
 .botao {
-	margin-top: 2rem;
-	width: 20vw;
-	height: 5vh;
-	background: white;
-	color: #1b1f23;
-	
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    margin-top: 2rem;
+    width: 18rem;
+    height: 3rem;
+    background: white;
+    color: #1b1f23;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .botao p {
@@ -91,6 +93,18 @@ main p {
 	width: 100%;
 }
 
+footer {
+	display: flex;
+	flex-direction: column;
+	
+	align-items: center;
+	justify-content: center;
+	
+	width: 100%;
+	height: 20vh;
+}
+
+
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media screen and (max-width: 800px) {
 	.column {
@@ -109,13 +123,34 @@ main p {
 	}
 }
 
-footer {
-	display: flex;
-	flex-direction: column;
-	
-	align-items: center;
-	justify-content: center;
-	
-	width: 100%;
-	height: 20vh;
+@media screen and (max-width: 450px) {
+	header {
+		margin-top: 2rem;
+		width: 100%;
+		height: 20vh;
+
+		display: flex;
+	}
+	main {
+		margin-top: 5em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	#add-url {
+	    margin-top: 2rem;
+	    width: 80vw;
+	    height: 3rem;
+	}
+	.botao {
+	    margin-top: 2rem;
+	    width: 10rem;
+	    height: 3rem;
+	    background: white;
+	    color: #1b1f23;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    text-align: center;
+	}
 }
